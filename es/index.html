@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hybrid Forge</title>
+<meta name="description" content="Un registro y planificador de entrenamiento para quienes levantan pesas y corren. Sin cuenta, sin anuncios; todo se queda en tu teléfono.">
+<link rel="canonical" href="https://3dled.github.io/hybrid-forge/es/">
+<link rel="alternate" hreflang="en" href="https://3dled.github.io/hybrid-forge/">
+<link rel="alternate" hreflang="es" href="https://3dled.github.io/hybrid-forge/es/">
+<!-- The Spanish home page, translated from ../index.html. Self-contained: nothing fetched from anywhere. -->
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f6f1;
+    --surface: #ffffff;
+    --text: #13150f;
+    --muted: #595d52;
+    --rule: #dcdfd4;
+    --accent: #4b6b00;
+    --accent-mark: #d4ff3f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #000000;
+      --surface: #0c0c0f;
+      --text: #ffffff;
+      --muted: #a3a3ad;
+      --rule: #2b2b34;
+      --accent: #d4ff3f;
+      --accent-mark: #d4ff3f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #000000;
+    --surface: #0c0c0f;
+    --text: #ffffff;
+    --muted: #a3a3ad;
+    --rule: #2b2b34;
+    --accent: #d4ff3f;
+    --accent-mark: #d4ff3f;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main {
+    max-width: 68ch;
+    margin: 0 auto;
+    padding: 56px 16px 72px;
+  }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .lang { font-size: 15px; }
+  .eyebrow {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 2px;
+    background: var(--accent-mark);
+    vertical-align: 0;
+  }
+  h1 {
+    margin: 0 0 16px;
+    font-size: clamp(32px, 7vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .lede { margin: 0 0 36px; font-size: 19px; color: var(--muted); }
+  h2 {
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  p { margin: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .facts {
+    display: grid;
+    gap: 1px;
+    margin: 0;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .facts > div { padding: 18px 22px; background: var(--surface); }
+  .facts ol { margin: 10px 0 0; padding-left: 1.3em; display: grid; gap: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <p class="eyebrow">Hybrid Forge</p>
+    <a class="lang" href="../" hreflang="en" lang="en">English</a>
+  </div>
+  <h1>Fuerza y carrera, en un solo plan.</h1>
+  <p class="lede">Un registro y planificador de entrenamiento para quienes levantan pesas y corren. Sin cuenta, sin anuncios, y todo lo que registras se queda en tu teléfono.</p>
+
+  <div class="facts">
+    <div>
+      <h2>Ayuda</h2>
+      <p>Preguntas, errores o algo que falta: <a href="mailto:john.shows.up@gmail.com">john.shows.up@gmail.com</a>, o Más &rarr; Enviar comentarios en la app.</p>
+    </div>
+    <div>
+      <h2>Privacidad</h2>
+      <p>Nada de lo que registras se envía a ningún sitio. <a href="privacy.html">Lee la política de privacidad</a>.</p>
+    </div>
+    <div>
+      <h2>iPhone</h2>
+      <p>En beta pública: <a href="https://testflight.apple.com/join/mvV8Smkd">únete con TestFlight</a>.</p>
+    </div>
+    <div>
+      <h2>Android</h2>
+      <p>En pruebas en Google Play. Para unirte, con la cuenta de Google de tu teléfono Android:</p>
+      <ol>
+        <li><a href="https://groups.google.com/g/hybrid-forge-testers">Únete al grupo de testers</a>.</li>
+        <li>En tu teléfono, <a href="https://play.google.com/store/apps/details?id=com.hybridforge.app">abre Hybrid Forge en Google Play</a>, únete a la prueba e instálala. En una computadora, <a href="https://play.google.com/apps/testing/com.hybridforge.app">hazte tester en la web</a>.</li>
+        <li>Quédate en la prueba 14 días. Google necesita 12 testers durante dos semanas antes de que la app pueda publicarse.</li>
+      </ol>
+    </div>
+  </div>
+</main>
+</body>
+</html>

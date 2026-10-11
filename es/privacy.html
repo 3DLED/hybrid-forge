@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad de Hybrid Forge</title>
+<meta name="description" content="Todo lo que registras en Hybrid Forge se queda en tu teléfono. Sin cuenta, sin anuncios, sin analíticas.">
+<!--
+  The Spanish privacy policy, translated from ../privacy.html. Self-contained like it: nothing
+  fetched from anywhere.
+
+  Published at https://3dled.github.io/hybrid-forge/es/privacy.html from the public repository
+  github.com/3DLED/hybrid-forge. Change it with the English one, in both copies.
+-->
+<link rel="canonical" href="https://3dled.github.io/hybrid-forge/es/privacy.html">
+<link rel="alternate" hreflang="en" href="https://3dled.github.io/hybrid-forge/privacy.html">
+<link rel="alternate" hreflang="es" href="https://3dled.github.io/hybrid-forge/es/privacy.html">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f6f1;
+    --surface: #ffffff;
+    --text: #13150f;
+    --muted: #595d52;
+    --rule: #dcdfd4;
+    --accent: #4b6b00;
+    --accent-mark: #d4ff3f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #000000;
+      --surface: #0c0c0f;
+      --text: #ffffff;
+      --muted: #a3a3ad;
+      --rule: #2b2b34;
+      --accent: #d4ff3f;
+      --accent-mark: #d4ff3f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #000000;
+    --surface: #0c0c0f;
+    --text: #ffffff;
+    --muted: #a3a3ad;
+    --rule: #2b2b34;
+    --accent: #d4ff3f;
+    --accent-mark: #d4ff3f;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main {
+    max-width: 68ch;
+    margin: 0 auto;
+    padding: 56px 16px 72px;
+  }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .lang { font-size: 15px; }
+  .eyebrow a { color: inherit; text-decoration: none; }
+  .eyebrow a:hover { color: var(--text); }
+  .eyebrow {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 2px;
+    background: var(--accent-mark);
+    vertical-align: 0;
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(32px, 7vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .dated { margin: 0 0 32px; color: var(--muted); font-size: 15px; }
+  h2 {
+    margin: 44px 0 10px;
+    font-size: 21px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p, ul { margin: 0 0 14px; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  strong { font-weight: 650; }
+
+  .short {
+    margin: 0 0 8px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+  }
+  .short h2 { margin-top: 0; font-size: 17px; }
+  .short ul { margin: 0; }
+  .short li:last-child { margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 0 0 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  th { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  td:first-child { white-space: nowrap; font-weight: 650; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 15px;
+  }
+  footer p + p { margin-top: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <p class="eyebrow"><a href="./">Hybrid Forge</a></p>
+    <a class="lang" href="../privacy.html" hreflang="en" lang="en">English</a>
+  </div>
+  <h1>Política de privacidad</h1>
+  <p class="dated">Vigente desde el 11 de octubre de 2026</p>
+
+  <section class="short" aria-labelledby="short-version">
+    <h2 id="short-version">En resumen</h2>
+    <ul>
+      <li>Todo lo que registras se queda en tu teléfono. No hay cuenta ni servidor.</li>
+      <li>Hybrid Forge no nos envía nada a nosotros ni a nadie más. Sin anuncios, sin analíticas, sin rastreo.</li>
+      <li>La ubicación se usa durante una carrera que tú inicias, para medir distancia y ritmo. Nunca se guarda por dónde fuiste.</li>
+      <li>Tus datos solo salen de tu teléfono cuando tú mismo los envías a algún sitio: una copia de seguridad, un archivo compartido, un correo.</li>
+    </ul>
+  </section>
+
+  <h2>Quién hace Hybrid Forge</h2>
+  <p>Hybrid Forge es una app de entrenamiento de fuerza y carrera hecha por John Moore, un desarrollador independiente. Las preguntas sobre esta política van a <a href="mailto:john.shows.up@gmail.com">john.shows.up@gmail.com</a>.</p>
+
+  <h2>Qué guarda la app, y dónde</h2>
+  <p>Hybrid Forge guarda lo que introduces en el almacenamiento propio de la app, en tu teléfono. Nada de eso se sube, y nosotros nunca lo vemos. Incluye:</p>
+  <ul>
+    <li><strong>Tu perfil:</strong> el nombre que escribes, las unidades, el idioma, tu equipo y los ajustes de la app.</li>
+    <li><strong>Tu entrenamiento:</strong> entrenamientos, series, repeticiones y pesos, planes, notas, el esfuerzo y cómo se sintió una sesión.</li>
+    <li><strong>Tus carreras, caminatas, marchas y salidas en bici:</strong> distancia, tiempo, ritmo, el tiempo en cada 100 metros, cuánto subiste y bajaste, y cuánto tiempo estuviste en movimiento. Sin mapa, ruta ni coordenadas.</li>
+    <li><strong>Tus zapatillas, botas y llantas de bici, si las añades:</strong> sus nombres y la distancia recorrida con cada una.</li>
+    <li><strong>Sobre ti, si lo añades:</strong> peso corporal, frecuencia cardíaca en reposo, horas de sueño, lesiones y resultados de pruebas físicas.</li>
+    <li><strong>Frecuencia cardíaca, en iPhone, si lo permites:</strong> la media, la máxima y la frecuencia minuto a minuto de un entrenamiento que registró tu reloj.</li>
+  </ul>
+
+  <h2>Ubicación</h2>
+  <p>Cuando inicias una carrera, Hybrid Forge usa la ubicación de tu teléfono para medir distancia y ritmo, y para decir en voz alta los parciales y los avisos de ritmo. Lo sigue haciendo con la pantalla apagada hasta que la carrera termina. En Android, una notificación lo indica mientras dura. La ubicación nunca se usa en ningún otro momento, nunca sale de tu teléfono y nunca se guarda: solo se conservan la distancia, los tiempos y el desnivel subido.</p>
+
+  <h2>Movimiento y forma física</h2>
+  <p>Si activas Estadísticas avanzadas, Hybrid Forge usa el barómetro de tu teléfono durante una carrera, caminata, marcha o salida en bici que inicias, para medir cuánto subes. En iPhone es el permiso de Movimiento y forma física. Solo se guarda el total subido y bajado, en tu teléfono.</p>
+
+  <h2>Apple Salud</h2>
+  <p>En iPhone, puedes dejar que Hybrid Forge lea entrenamientos y frecuencia cardíaca de Apple Salud, para añadir tu frecuencia cardíaca a una sesión. Solo lee, y nunca escribe en Salud. Los datos de salud se quedan en tu teléfono, nunca se usan para publicidad y nunca se comparten con nadie. Puedes desactivar el acceso cuando quieras en la app Salud o en los Ajustes del iPhone.</p>
+
+  <h2>Notificaciones</h2>
+  <p>Los recordatorios, el aviso del temporizador de descanso y la tarjeta del entrenamiento en tu pantalla de bloqueo se crean en tu teléfono. Ninguna notificación viene de un servidor.</p>
+
+  <h2>Cuándo salen tus datos de tu teléfono</h2>
+  <p>Solo cuando tú lo decides, y solo hacia donde los envías:</p>
+  <ul>
+    <li><strong>Copias de seguridad.</strong> Si exportas una copia de seguridad, o activas la copia automática, el archivo va al lugar que elijas, como iCloud Drive, Google Drive, OneDrive o el almacenamiento de tu teléfono. Ese proveedor lo guarda bajo su propia política de privacidad.</li>
+    <li><strong>Compartir.</strong> Si compartes un entrenamiento, un plan, toda tu biblioteca o una imagen de resumen, va a quien y adonde lo envíes con las opciones para compartir de tu teléfono.</li>
+    <li><strong>Comentarios.</strong> «Enviar comentarios» abre tu propia app de correo. Recibimos lo que decidas enviar.</li>
+    <li><strong>La copia de seguridad de tu teléfono.</strong> La copia de seguridad de iCloud en iPhone y la copia de seguridad del dispositivo en Android pueden incluir los datos de la app, guardados en tu propia cuenta de Apple o de Google bajo sus políticas.</li>
+  </ul>
+
+  <h2>Lo que Hybrid Forge no hace</h2>
+  <ul>
+    <li>No tiene cuenta ni inicio de sesión.</li>
+    <li>No se conecta a internet para nada propio.</li>
+    <li>No contiene publicidad, analíticas, informes de fallos ni herramientas de rastreo.</li>
+    <li>No vende, alquila ni comparte tu información. No hay nada que vender: no la tenemos.</li>
+  </ul>
+
+  <h2>Permisos que pide</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col">Permiso</th><th scope="col">Para qué</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ubicación</td><td>Distancia, ritmo y avisos en voz alta durante una carrera que inicias.</td></tr>
+        <tr><td>Movimiento y forma física</td><td>Con Estadísticas avanzadas activadas: el barómetro, para el desnivel subido durante una carrera que inicias.</td></tr>
+        <tr><td>Notificaciones</td><td>Recordatorios, el aviso del temporizador de descanso y la tarjeta del entrenamiento en tu pantalla de bloqueo.</td></tr>
+        <tr><td>Apple Salud</td><td>Solo en iPhone: leer los entrenamientos y la frecuencia cardíaca de tu reloj.</td></tr>
+        <tr><td>Fotos</td><td>Solo en iPhone: guardar una imagen de resumen que pediste guardar. La app no puede ver tus fotos.</td></tr>
+        <tr><td>Archivos</td><td>Escribir el archivo de copia de seguridad en el lugar que elegiste.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Borrar tus datos</h2>
+  <p>Borra cualquier entrenamiento o registro en la app, o bórralo todo de una vez con Más &rarr; Borrar todos los datos. Desinstalar Hybrid Forge elimina todo lo que guardó en tu teléfono. Las copias de seguridad y los archivos compartidos que hiciste son tuyos: consérvalos o bórralos allí donde los pusiste.</p>
+
+  <h2>Menores</h2>
+  <p>Hybrid Forge no está dirigida a menores de 13 años. No recopila información personal de nadie, menores incluidos.</p>
+
+  <h2>Cambios</h2>
+  <p>Si esta política cambia, la nueva versión se publicará aquí con una nueva fecha de vigencia. Si la app empezara alguna vez a enviar datos fuera de tu teléfono, esta página lo dirá antes de que lo haga.</p>
+
+  <footer>
+    <p>Hybrid Forge &middot; <a href="mailto:john.shows.up@gmail.com">john.shows.up@gmail.com</a></p>
+    <p>Esta es una traducción de la <a href="../privacy.html" hreflang="en">versión en inglés</a>. Si alguna vez difieren, prevalece la versión en inglés.</p>
+  </footer>
+</main>
+</body>
+</html>
