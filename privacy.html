@@ -143,7 +143,7 @@
     <a class="lang" href="es/privacy.html" hreflang="es" lang="es">Español</a>
   </div>
   <h1>Privacy policy</h1>
-  <p class="dated">Effective October 11, 2026</p>
+  <p class="dated">Effective October 14, 2026</p>
 
   <section class="short" aria-labelledby="short-version">
     <h2 id="short-version">The short version</h2>
@@ -151,6 +151,7 @@
       <li>Everything you log stays on your phone. There is no account and no server.</li>
       <li>Hybrid Forge sends nothing to us or to anyone else. No ads, no analytics, no tracking.</li>
       <li>Location is used during a run you start, to measure distance and pace. Where you went is never saved.</li>
+      <li>Health data from Apple Health or Health Connect is only read, stays on your phone and is never shared.</li>
       <li>Your data leaves your phone only when you send it somewhere yourself: a backup, a shared file, an email.</li>
     </ul>
   </section>
@@ -165,8 +166,9 @@
     <li><strong>Your training:</strong> workouts, sets, reps and weights, plans, notes, effort and how a session felt.</li>
     <li><strong>Your runs, walks, rucks and rides:</strong> distance, time, pace, the time at each 100 metres, how much you climbed and descended, and how long you were moving. No map, route or coordinates.</li>
     <li><strong>Your shoes, boots and bike tires, if you add them:</strong> their names and the miles on each.</li>
-    <li><strong>About you, if you add it:</strong> bodyweight, resting heart rate, sleep hours, injuries and fitness test results.</li>
-    <li><strong>Heart rate, on iPhone, if you allow it:</strong> the average, maximum and per-minute heart rate of a workout your watch recorded.</li>
+    <li><strong>About you, if you add it:</strong> bodyweight, sex and birth month (for age grades and strength standards), resting heart rate, sleep hours, injuries, fitness test results, and the waist and height measurements the Air Force fitness test scores.</li>
+    <li><strong>From your watch, if you allow it:</strong> the average, maximum and per-minute heart rate of a workout your watch recorded, and the distance, time and splits of a run, walk, hike or ride you bring in from it.</li>
+    <li><strong>From a heart rate monitor, if you pair one:</strong> the average, maximum and per-minute heart rate of a workout, and the monitor's name.</li>
   </ul>
 
   <h2>Location</h2>
@@ -175,8 +177,16 @@
   <h2>Motion &amp; Fitness</h2>
   <p>If you switch on advanced stats, Hybrid Forge uses your phone's barometer during a run, walk, ruck or ride you start, to measure how much you climb. On iPhone this is the Motion &amp; Fitness permission. Only the total climbed and descended is kept, on your phone.</p>
 
-  <h2>Apple Health</h2>
-  <p>On iPhone, you can let Hybrid Forge read workouts and heart rate from Apple Health, to add your heart rate to a session. It only reads, and never writes to Health. Health data stays on your phone and is never used for advertising or shared with anyone. You can turn access off at any time in the Health app or iPhone Settings.</p>
+  <h2>Apple Health and Health Connect</h2>
+  <p>On iPhone, you can let Hybrid Forge read workouts from Apple Health, with their heart rate, distance and route. On Android, you can let it read exercise sessions, heart rate and distance from Health Connect. It uses them for two things: to show your heart rate on a workout you logged, and to bring in a run, walk, hike or ride your watch recorded, when you choose to. A route is read only to work out the time at each 100 metres and the height climbed, and is not kept.</p>
+  <p>Hybrid Forge reads only while the app is open, and never writes your health data. Health data stays on your phone. It is never used for advertising, never sold, and never transferred or shared with anyone. You can turn access off at any time in the Health app or iPhone Settings, or in Health Connect on Android.</p>
+  <p>Hybrid Forge's use of information received from Health Connect adheres to the Health Connect Permissions policy, including the Limited Use requirements.</p>
+
+  <h2>Apple Watch</h2>
+  <p>On iPhone, if you switch on planned runs on your watch, Hybrid Forge puts the coming week's planned runs, walks, rucks and rides in the Workout app on your Apple Watch: each one's name, distances, times and target paces. They go from your iPhone to your watch through Apple's WorkoutKit, never to us, and stay in step with your plan. Switching it off takes them off the watch.</p>
+
+  <h2>Bluetooth</h2>
+  <p>If you pair a heart rate monitor (a chest strap, an arm band, or a watch that broadcasts heart rate), Hybrid Forge connects to it over Bluetooth while a workout is in progress, to show your heart rate and keep it with the workout. It looks only for heart rate monitors, keeps only the monitor's name and your phone's identifier for it, and never uses Bluetooth to work out where you are. The readings stay on your phone.</p>
 
   <h2>Notifications</h2>
   <p>Reminders, the rest timer's alert and the workout card on your lock screen are created on your phone. No notification comes from a server.</p>
@@ -207,8 +217,11 @@
       <tbody>
         <tr><td>Location</td><td>Distance, pace and spoken cues during a run you start.</td></tr>
         <tr><td>Motion &amp; Fitness</td><td>With advanced stats on: the barometer, for the height climbed during a run you start.</td></tr>
+        <tr><td>Bluetooth</td><td>Connecting to a heart rate monitor you paired, during a workout. On Android this is called Nearby devices.</td></tr>
         <tr><td>Notifications</td><td>Reminders, the rest timer's alert, and the workout card on your lock screen.</td></tr>
-        <tr><td>Apple Health</td><td>iPhone only: reading your watch's workouts and heart rate.</td></tr>
+        <tr><td>Apple Health</td><td>iPhone only: reading your watch's workouts, with their heart rate, distance and route.</td></tr>
+        <tr><td>Health Connect</td><td>Android only: reading your watch's exercise sessions, heart rate and distance.</td></tr>
+        <tr><td>Workout scheduling</td><td>iPhone only, if you switch it on: putting your planned runs in the Workout app on your Apple Watch.</td></tr>
         <tr><td>Photos</td><td>iPhone only: saving a summary image you asked to save. The app cannot see your photos.</td></tr>
         <tr><td>Files</td><td>Writing the backup file to the place you chose.</td></tr>
       </tbody>
@@ -217,6 +230,7 @@
 
   <h2>Deleting your data</h2>
   <p>Delete any workout or entry in the app, or erase everything at once with More &rarr; Erase all data. Uninstalling Hybrid Forge removes everything it stored on your phone. Backups and shared files you made are yours to keep or delete wherever you put them.</p>
+  <p>Workouts you brought in from your watch are deleted the same way, and deleting anything in Hybrid Forge never touches Apple Health or Health Connect. To stop it reading health data, choose Leave it alone under More &rarr; Apple Health (Health Connect on Android), or turn access off in the Health app or in Health Connect.</p>
 
   <h2>Children</h2>
   <p>Hybrid Forge is not directed at children under 13. It collects no personal information from anyone, children included.</p>
