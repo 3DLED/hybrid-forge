@@ -181,8 +181,9 @@
     byId('get-title').textContent = words.getTitle;
 
     /*
-     * Straight to the store on an iPhone, rather than by way of the home page. `ct` tags the
-     * download as one that came from a shared code, for App Store Connect's campaign counts.
+     * Straight to the store on an iPhone, rather than by way of the home page. The link is the
+     * one App Store Connect generated for the "QR-CodeSharedWorkoutOrPlan" campaign: `pt` is the
+     * provider token and `ct` the campaign, so downloads from a shared code are counted there.
      * iPads are left to the home page: the app is made for iPhone. Android goes to the home
      * page's steps for joining the Google Play test, while there is no public listing to send it to.
      */
@@ -190,7 +191,7 @@
     var platform = /iPhone|iPod/.test(ua) ? 'iphone' : /Android/i.test(ua) ? 'android' : 'other';
     var get = words.get[platform];
     var href = platform === 'iphone'
-      ? 'https://apps.apple.com/app/id6811080451?ct=qr-code&mt=8'
+      ? 'https://apps.apple.com/app/apple-store/id6811080451?pt=129434242&ct=QR-Code&mt=8'
       : platform === 'android' ? words.home + '#android' : words.home;
     var getText = byId('get-text');
     getText.textContent = get[0];
