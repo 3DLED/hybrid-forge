@@ -105,6 +105,35 @@
   }
   .facts > div { padding: 18px 22px; background: var(--surface); }
   .facts ol { margin: 10px 0 0; padding-left: 1.3em; display: grid; gap: 6px; }
+
+  /* The App Store's slides, plus one for the watches that only this site shows. No script needed
+     to scroll them; the arrows are a convenience for a mouse. */
+  .shots { margin: 0 0 36px; }
+  .shots-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 0 0 12px; }
+  .shots-head p { font-size: 15px; color: var(--muted); }
+  .arrows { display: flex; gap: 8px; }
+  .arrows button {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--rule); background: var(--surface); color: var(--text);
+    font: 600 20px/1 system-ui, sans-serif; cursor: pointer;
+  }
+  .arrows button:hover { border-color: var(--accent); }
+  .arrows button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .arrows button:disabled { opacity: 0.35; cursor: default; }
+  .strip {
+    display: flex; gap: 14px;
+    margin: 0 -16px; padding: 0 16px 12px;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding: 0 16px;
+    scrollbar-width: thin;
+  }
+  .strip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+  .strip figure { flex: 0 0 min(62vw, 236px); margin: 0; scroll-snap-align: start; }
+  .strip img {
+    display: block; width: 100%; height: auto; aspect-ratio: 520 / 1131;
+    border-radius: 14px; border: 1px solid var(--rule); background: #000;
+  }
+  @media (prefers-reduced-motion: no-preference) { .strip { scroll-behavior: smooth; } }
 </style>
 </head>
 <body>
@@ -115,6 +144,29 @@
   </div>
   <h1>Fuerza y carrera, en un solo plan.</h1>
   <p class="lede">Un registro y planificador de entrenamiento para quienes levantan pesas y corren. Sin cuenta, sin anuncios, y todo lo que registras se queda en tu teléfono.</p>
+
+  <section class="shots" aria-label="Cómo se ve la app">
+    <div class="shots-head">
+      <p>Desliza para ver más, o usa las flechas.</p>
+      <div class="arrows">
+        <button type="button" class="prev" aria-label="Capturas anteriores">&lsaquo;</button>
+        <button type="button" class="next" aria-label="Capturas siguientes">&rsaquo;</button>
+      </div>
+    </div>
+    <div class="strip" tabindex="0" role="group" aria-label="Cómo se ve la app">
+      <figure><img src="../img/es/workout.jpg" width="520" height="1131" alt="Regístralo con un toque. Superseries en una sola pantalla, y un descanso que sigue contando con el teléfono bloqueado."></figure>
+      <figure><img src="../img/es/yours.jpg" width="520" height="1131" alt="Sin suscripción. Sin cuenta. Funciona sin conexión. Tu entrenamiento se queda en tu teléfono. No se sube nada."></figure>
+      <figure><img src="../img/es/watches.jpg" width="520" height="1131" alt="Funciona con Apple Watch. Y con Garmin. Tu plan en la muñeca, y cada entrenamiento de vuelta en tu teléfono."></figure>
+      <figure><img src="../img/es/today.jpg" width="520" height="1131" alt="Siempre sabes qué sigue. Pesas, carreras y marchas con mochila, en una sola semana." loading="lazy"></figure>
+      <figure><img src="../img/es/plan.jpg" width="520" height="1131" alt="Planes que se ajustan a tu semana. Para una carrera, para ganar fuerza o solo para ser constante." loading="lazy"></figure>
+      <figure><img src="../img/es/run.jpg" width="520" height="1131" alt="Cada kilómetro cuenta. Carreras y marchas con distancia por GPS, ritmo, parciales y cada nuevo récord." loading="lazy"></figure>
+      <figure><img src="../img/es/progress.jpg" width="520" height="1131" alt="Mira cómo suma el trabajo. Carga de entrenamiento y esfuerzo, semana tras semana." loading="lazy"></figure>
+      <figure><img src="../img/es/builds-to.jpg" width="520" height="1131" alt="Elige hasta dónde llega. Fija tu carrera más larga y tu semana más larga, y las semanas siguientes se reescriben solas." loading="lazy"></figure>
+      <figure><img src="../img/es/tests.jpg" width="520" height="1131" alt="Ponte a prueba. Pruebas físicas militares y estándares de kettlebell, calificados por ti." loading="lazy"></figure>
+      <figure><img src="../img/es/code.jpg" width="520" height="1131" alt="Compártelo como código. Cualquier cámara de teléfono puede escanear un entrenamiento o un plan." loading="lazy"></figure>
+      <figure><img src="../img/es/history.jpg" width="520" height="1131" alt="Cada mes de un vistazo. Totales de carreras y de fuerza, lado a lado." loading="lazy"></figure>
+    </div>
+  </section>
 
   <div class="facts">
     <div>
@@ -140,5 +192,24 @@
     </div>
   </div>
 </main>
+<script>
+  // The arrows move the strip by what is in view; without this the strip still swipes and scrolls.
+  (function () {
+    var strip = document.querySelector('.strip');
+    var prev = document.querySelector('.arrows .prev');
+    var next = document.querySelector('.arrows .next');
+    if (!strip || !prev || !next) return;
+    var step = function () { return Math.max(strip.clientWidth - 60, 200); };
+    var update = function () {
+      prev.disabled = strip.scrollLeft <= 4;
+      next.disabled = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 4;
+    };
+    prev.addEventListener('click', function () { strip.scrollBy({ left: -step() }); });
+    next.addEventListener('click', function () { strip.scrollBy({ left: step() }); });
+    strip.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
 </body>
 </html>

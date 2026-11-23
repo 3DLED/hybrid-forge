@@ -8,7 +8,8 @@
 <link rel="canonical" href="https://3dled.github.io/hybrid-forge/">
 <link rel="alternate" hreflang="en" href="https://3dled.github.io/hybrid-forge/">
 <link rel="alternate" hreflang="es" href="https://3dled.github.io/hybrid-forge/es/">
-<!-- Self-contained like the privacy policy: no fonts, scripts or images fetched from anywhere. -->
+<!-- Self-contained like the privacy policy: no fonts, scripts or images fetched from anywhere else;
+     the screenshots are this site's own files. -->
 <style>
   :root {
     color-scheme: light dark;
@@ -105,6 +106,35 @@
   }
   .facts > div { padding: 18px 22px; background: var(--surface); }
   .facts ol { margin: 10px 0 0; padding-left: 1.3em; display: grid; gap: 6px; }
+
+  /* The App Store's slides, plus one for the watches that only this site shows. No script needed
+     to scroll them; the arrows are a convenience for a mouse. */
+  .shots { margin: 0 0 36px; }
+  .shots-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 0 0 12px; }
+  .shots-head p { font-size: 15px; color: var(--muted); }
+  .arrows { display: flex; gap: 8px; }
+  .arrows button {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--rule); background: var(--surface); color: var(--text);
+    font: 600 20px/1 system-ui, sans-serif; cursor: pointer;
+  }
+  .arrows button:hover { border-color: var(--accent); }
+  .arrows button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .arrows button:disabled { opacity: 0.35; cursor: default; }
+  .strip {
+    display: flex; gap: 14px;
+    margin: 0 -16px; padding: 0 16px 12px;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding: 0 16px;
+    scrollbar-width: thin;
+  }
+  .strip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+  .strip figure { flex: 0 0 min(62vw, 236px); margin: 0; scroll-snap-align: start; }
+  .strip img {
+    display: block; width: 100%; height: auto; aspect-ratio: 520 / 1131;
+    border-radius: 14px; border: 1px solid var(--rule); background: #000;
+  }
+  @media (prefers-reduced-motion: no-preference) { .strip { scroll-behavior: smooth; } }
 </style>
 </head>
 <body>
@@ -115,6 +145,29 @@
   </div>
   <h1>Strength and running, in one plan.</h1>
   <p class="lede">A training log and planner for people who lift and run. No account, no ads, and everything you log stays on your phone.</p>
+
+  <section class="shots" aria-label="What the app looks like">
+    <div class="shots-head">
+      <p>Swipe for more, or use the arrows.</p>
+      <div class="arrows">
+        <button type="button" class="prev" aria-label="Previous screenshots">&lsaquo;</button>
+        <button type="button" class="next" aria-label="Next screenshots">&rsaquo;</button>
+      </div>
+    </div>
+    <div class="strip" tabindex="0" role="group" aria-label="What the app looks like">
+      <figure><img src="img/en/workout.jpg" width="520" height="1131" alt="Log it in a tap. Supersets on one screen, and a rest timer that keeps time with the phone locked."></figure>
+      <figure><img src="img/en/yours.jpg" width="520" height="1131" alt="No subscription. No account. Works offline. Your training stays on your phone. Nothing is uploaded."></figure>
+      <figure><img src="img/en/watches.jpg" width="520" height="1131" alt="Works with Apple Watch. And with Garmin. Your plan on your wrist, and every workout back on your phone."></figure>
+      <figure><img src="img/en/today.jpg" width="520" height="1131" alt="Always know what’s next. Lifting, running and rucking, planned into one week." loading="lazy"></figure>
+      <figure><img src="img/en/plan.jpg" width="520" height="1131" alt="Plans that fit your week. For a race, for strength, or just for showing up." loading="lazy"></figure>
+      <figure><img src="img/en/run.jpg" width="520" height="1131" alt="Every mile counts. Runs and rucks with GPS distance, pace and splits, and every new best." loading="lazy"></figure>
+      <figure><img src="img/en/progress.jpg" width="520" height="1131" alt="See the work add up. Training load and effort, week after week." loading="lazy"></figure>
+      <figure><img src="img/en/builds-to.jpg" width="520" height="1131" alt="Set where it builds to. Pick your longest run and biggest week, and the weeks ahead rewrite themselves." loading="lazy"></figure>
+      <figure><img src="img/en/tests.jpg" width="520" height="1131" alt="Test yourself. Military fitness tests and kettlebell standards, scored for you." loading="lazy"></figure>
+      <figure><img src="img/en/code.jpg" width="520" height="1131" alt="Share it as a code. Any phone camera can scan a workout or a plan." loading="lazy"></figure>
+      <figure><img src="img/en/history.jpg" width="520" height="1131" alt="Every month at a glance. Totals for runs and strength, side by side." loading="lazy"></figure>
+    </div>
+  </section>
 
   <div class="facts">
     <div>
@@ -140,5 +193,24 @@
     </div>
   </div>
 </main>
+<script>
+  // The arrows move the strip by what is in view; without this the strip still swipes and scrolls.
+  (function () {
+    var strip = document.querySelector('.strip');
+    var prev = document.querySelector('.arrows .prev');
+    var next = document.querySelector('.arrows .next');
+    if (!strip || !prev || !next) return;
+    var step = function () { return Math.max(strip.clientWidth - 60, 200); };
+    var update = function () {
+      prev.disabled = strip.scrollLeft <= 4;
+      next.disabled = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 4;
+    };
+    prev.addEventListener('click', function () { strip.scrollBy({ left: -step() }); });
+    next.addEventListener('click', function () { strip.scrollBy({ left: step() }); });
+    strip.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
 </body>
 </html>
